@@ -5,7 +5,6 @@
  */
 package tugaskelompok;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -18,7 +17,7 @@ public class Tugaskelompok {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-          Scanner scan = new Scanner(System.in);
+         Scanner scan = new Scanner(System.in);
           int inputPilihan;
         boolean pilihan = true;
         while(pilihan){
@@ -26,12 +25,12 @@ public class Tugaskelompok {
         System.out.println("1. Add");
         System.out.println("2. View");
         System.out.println("3. Login");
-        System.out.println ("=====================");
+        System.out.println("=====================");
         System.out.print("Pilihan(1-3) : ");
         inputPilihan = scan.nextInt();
         switch (inputPilihan) {
             case 1:
-                System.out.println("1");
+
                 break;
                  case 2:
                      System.out.println("2");
