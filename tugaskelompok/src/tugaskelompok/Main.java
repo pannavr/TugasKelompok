@@ -37,7 +37,7 @@ public class Main {
                     System.out.print("Nama Lengkap    : ");
                     String namaLengkap = scan.next();
                     // nama belakang
-                    System.out.println("Nama Belakang : "+ namaLengkap.substring(namaLengkap.lastIndexOf(' ')));
+                    
                     System.out.print("Password        :");
                     String password = scan.next();
                     

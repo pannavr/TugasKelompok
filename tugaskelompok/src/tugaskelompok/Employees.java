@@ -12,7 +12,10 @@ package tugaskelompok;
 public class Employees {
     int idEmployee;
     String namaDepan,namaBelakang,username,password;
-
+    public static String addEmploye(){
+    
+        return"";
+    }
     public int getIdEmployee() {
         return idEmployee;
     }
