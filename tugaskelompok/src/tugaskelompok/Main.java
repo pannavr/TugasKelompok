@@ -34,8 +34,13 @@ public class Main {
                 case 1:
                     System.out.println("========================================"); 
                     System.out.println("Pilihan(1-3) : 1");
-                    System.out.println("Nama Lengkap    : ");
-                    System.out.println("Password        :");
+                    System.out.print("Nama Lengkap    : ");
+                    String namaLengkap = scan.next();
+                    // nama belakang
+                    System.out.println("Nama Belakang : "+ namaLengkap.substring(namaLengkap.lastIndexOf(' ')));
+                    System.out.print("Password        :");
+                    String password = scan.next();
+                    
                     System.out.println("========================================");
                     System.out.println("");
                     break;
