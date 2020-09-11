@@ -1,23 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tugaskelompok;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-/**
- *
- * @author user
- */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String namaLengkap, password;
         int inputPilihan;
         boolean pilihan = true;
 
@@ -26,22 +17,25 @@ public class Main {
             System.out.println("1. Add");
             System.out.println("2. View");
             System.out.println("3. Login");
+            System.out.println("4. Exit");
             System.out.println("=====================");
-            System.out.print("Pilihan(1-3) : ");
-            inputPilihan = scan.nextInt();
+            System.out.print("Pilihan(1-4) : ");
+            inputPilihan = Integer.parseInt(br.readLine());
 
             switch (inputPilihan) {
                 case 1:
-                    System.out.println("========================================"); 
-                    System.out.println("Pilihan(1-3) : 1");
-                    System.out.println("Nama Lengkap    : ");
-                    System.out.println("Password        :");
                     System.out.println("========================================");
+                    System.out.println("Pilihan(1-4) : 1");
+                    System.out.print("Nama Lengkap    : ");
+                    namaLengkap = br.readLine();
+                    System.out.print("Password        : ");
+                    password = br.readLine();
+                    Employees.AddEmployee(namaLengkap, password);
                     System.out.println("");
                     break;
                 case 2:
                     System.out.println("========================================");
-                    System.out.println("Pilihan(1-3) : 2");
+                    System.out.println("Pilihan(1-4) : 2");
                     System.out.println("Id Karyawan     : ");
                     System.out.println("Nama Depan      : ");
                     System.out.println("Nama Belakang   : ");
@@ -51,11 +45,14 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("========================================");
-                    System.out.println("Pilihan(1-3) : 3");
+                    System.out.println("Pilihan(1-4) : 3");
                     System.out.println("Username    : ");
                     System.out.println("Password    : ");
                     System.out.println("========================================");
                     System.out.println("");
+                    break;
+                case 4:
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Data tidak di temukan silahkan pilih 1-3");
