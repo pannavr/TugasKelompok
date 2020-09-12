@@ -14,30 +14,26 @@ import java.util.Scanner;
  */
 public class Employees {
 
-    static String[] namaDepan, namaBelakang, username, password;
-    static int[] idEmployee;
+    static Scanner in = new Scanner(System.in);
     static ArrayList<String> id = new ArrayList<>();
-    static ArrayList<String> nameLengkap = new ArrayList<>();
-     static ArrayList<String> firstName = new ArrayList<String>();
+    static ArrayList<String> firstName = new ArrayList<String>();
     static ArrayList<String> lastName = new ArrayList<>();
     static ArrayList<String> usernameArr = new ArrayList<>();
     static ArrayList<String> passwordArr = new ArrayList<String>();
 
     public static String tambahemployee() {
-        Scanner in = new Scanner(System.in);
         System.out.println("Pilihan(1-3) : 1");
         int a = id.size();
-        int idbaru =1+a++;
+        int idbaru = 1 + a++;
         String addZero = String.format("%05d", idbaru);
         id.add(addZero);
         System.out.print("Nama Lengkap    : ");
         String namaAsli = in.nextLine();
-        nameLengkap.add(namaAsli);
-  //            firsr name 
-                    String seprator = " ";
-                    int sepPos = namaAsli.lastIndexOf(seprator);
-                    String namaDepan = namaAsli.substring(0, sepPos);                  
-                  firstName.add(namaDepan);
+        //            firsr name 
+        String seprator = " ";
+        int sepPos = namaAsli.lastIndexOf(seprator);
+        String namaDepan = namaAsli.substring(0, sepPos);
+        firstName.add(namaDepan);
         //   menambahkan nama belakang 
         String namaAkhir = namaAsli.substring(namaAsli.lastIndexOf(' '));
         lastName.add(namaAkhir);
@@ -65,11 +61,22 @@ public class Employees {
     public static void lihatemployee() {
         for (int i = 0; i < id.size(); i++) {
             System.out.println("ID = " + id.get(i));
-            System.out.println("Nama Lengkap = " + nameLengkap.get(i));
-             System.out.println("Nama depan = "+firstName.get(i));
+            System.out.println("Nama depan = " + firstName.get(i));
             System.out.println("Nama Akhir = " + lastName.get(i));
             System.out.println("Username = " + usernameArr.get(i));
             System.out.println("Password : " + passwordArr.get(i));
+        }
+    }
+
+    public static void login() {
+        System.out.print("Username    : ");
+        String username = in.nextLine();
+        System.out.print("Password    : ");
+        String password = in.nextLine();
+        if (BCrypt.checkpw(password, passwordArr.get(usernameArr.indexOf(username)))) {
+            System.out.println("Login Berhasil!!");
+        }else{
+            System.out.println("Login Gagal!!");
         }
     }
 

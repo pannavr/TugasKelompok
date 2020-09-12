@@ -27,8 +27,9 @@ public class Main {
             System.out.println("1. Add");
             System.out.println("2. View");
             System.out.println("3. Login");
+            System.out.println("4. Exit");
             System.out.println("=====================");
-            System.out.print("Pilihan(1-3) : ");
+            System.out.print("Pilihan(1-4) : ");
             inputPilihan = scan.nextInt();
 
             switch (inputPilihan) {
@@ -39,18 +40,20 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("=====================");
-                    System.out.println("Pilihan(1-3) : 2");
+                    System.out.println("Pilihan(1-4) : 2");
                     Employees.lihatemployee();
                     System.out.println("=====================");
                     System.out.println("");
                     break;
                 case 3:
                     System.out.println("=====================");
-                    System.out.println("Pilihan(1-3) : 3");
-                    System.out.println("Username    : ");
-                    System.out.println("Password    : ");
+                    System.out.println("Pilihan(1-4) : 3");
+                    Employees.login();
                     System.out.println("=====================");
                     System.out.println("");
+                    break;
+                case 4:
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Data tidak di temukan silahkan pilih 1-3");
