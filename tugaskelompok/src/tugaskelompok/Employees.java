@@ -18,6 +18,7 @@ public class Employees {
     static int[] idEmployee;
     static ArrayList<Integer> id = new ArrayList<>();
     static ArrayList<String> nameLengkap = new ArrayList<>();
+     static     ArrayList<String> firstName = new ArrayList<String>();
     static ArrayList<String> lastName = new ArrayList<>();
     static ArrayList<String> usernameArr = new ArrayList<>();
     static ArrayList<String> passwordArr = new ArrayList<String>();
@@ -30,6 +31,11 @@ public class Employees {
         System.out.print("Nama Lengkap    : ");
         String namaAsli = in.nextLine();
         nameLengkap.add(namaAsli);
+  //            firsr name 
+                    String seprator = " ";
+                    int sepPos = namaAsli.lastIndexOf(seprator);
+                    String namaDepan = namaAsli.substring(0, sepPos);                  
+                  firstName.add(namaDepan);
         //   menambahkan nama belakang 
         String namaAkhir = namaAsli.substring(namaAsli.lastIndexOf(' '));
         lastName.add(namaAkhir);
@@ -58,6 +64,7 @@ public class Employees {
         for (int i = 0; i < id.size(); i++) {
             System.out.println("ID = " + id.get(i)+1);
             System.out.println("Nama Lengkap = " + nameLengkap.get(i));
+             System.out.println("Nama depan = "+firstName.get(i));
             System.out.println("Nama Akhir = " + lastName.get(i));
             System.out.println("Username = " + usernameArr.get(i));
             System.out.println("Password : " + passwordArr.get(i));
