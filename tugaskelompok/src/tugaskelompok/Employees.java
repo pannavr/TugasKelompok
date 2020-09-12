@@ -22,6 +22,15 @@ public class Employees {
         id.add(addZero);
         System.out.print("Nama Lengkap    : ");
         String namaAsli = in.nextLine();
+        //input password
+         System.out.print("Password        : ");
+        String pas = in.nextLine();
+        //mendapat hashe password;
+        String passHashe = pas;
+        String getSalt = BCrypt.gensalt();
+        String hashePass = BCrypt.hashpw(pas, getSalt);
+        passwordArr.add(hashePass);
+        try {  // untuk mendapatkan nama yang cuma satu kata
         // first name 
         String seprator = " ";
         int sepPos = namaAsli.lastIndexOf(seprator);
@@ -31,13 +40,7 @@ public class Employees {
         String namaAkhir = namaAsli.substring(namaAsli.lastIndexOf(' '));
         lastName.add(namaAkhir);
         //String  namaLengkap = in.nextLine();             
-        System.out.print("Password        : ");
-        String pas = in.nextLine();
-        //mendapat hashe password;
-        String passHashe = pas;
-        String getSalt = BCrypt.gensalt();
-        String hashePass = BCrypt.hashpw(pas, getSalt);
-        passwordArr.add(hashePass);
+       
         //username input username
         String user = namaAkhir.substring(0, 3);
         String[] values = namaAsli.split(" ", 2);
@@ -61,7 +64,19 @@ public class Employees {
         } } catch (Exception e) {
               }
         } usernameArr.add(userFix);
+       } catch (Exception e) { 
+           // untuk mendapatkan nama yang cuma satu kata
+            // first name 
+
+        firstName.add(namaAsli);
+        //menambahkan nama belakang 
+    
+        lastName.add(namaAsli);        
        
+        //username input username
+          usernameArr.add(namaAsli);
+        
+        }
     }
 
         // menampilka employee
@@ -90,7 +105,7 @@ public class Employees {
         }else{
             System.out.println("Login Gagal!!");
         } } catch (Exception e) {
-            System.out.println("Login gagal");
+            System.out.println("Username tidak ada");
         }
     }
 
