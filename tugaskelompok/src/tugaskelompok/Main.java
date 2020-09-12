@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author user
+ * @author panna & yogi
  */
 public class Main {
 
@@ -16,12 +16,16 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+      
         Employees employees = new Employees();
         Scanner scan = new Scanner(System.in);
 
         int inputPilihan;
         boolean pilihan = true;
 
+            
+       
         while (pilihan) {
             System.out.println("=====================");
             System.out.println("1. Add");
@@ -58,7 +62,7 @@ public class Main {
                 default:
                     System.out.println("Data tidak di temukan silahkan pilih 1-3");
             }
-        }
+        }  
     }
 
 }
