@@ -16,9 +16,9 @@ public class Employees {
 
     static String[] namaDepan, namaBelakang, username, password;
     static int[] idEmployee;
-    static ArrayList<Integer> id = new ArrayList<>();
+    static ArrayList<String> id = new ArrayList<>();
     static ArrayList<String> nameLengkap = new ArrayList<>();
-     static     ArrayList<String> firstName = new ArrayList<String>();
+     static ArrayList<String> firstName = new ArrayList<String>();
     static ArrayList<String> lastName = new ArrayList<>();
     static ArrayList<String> usernameArr = new ArrayList<>();
     static ArrayList<String> passwordArr = new ArrayList<String>();
@@ -27,7 +27,9 @@ public class Employees {
         Scanner in = new Scanner(System.in);
         System.out.println("Pilihan(1-3) : 1");
         int a = id.size();
-        id.add(a++);
+        int idbaru =1+a++;
+        String addZero = String.format("%05d", idbaru);
+        id.add(addZero);
         System.out.print("Nama Lengkap    : ");
         String namaAsli = in.nextLine();
         nameLengkap.add(namaAsli);
@@ -62,7 +64,7 @@ public class Employees {
 
     public static void lihatemployee() {
         for (int i = 0; i < id.size(); i++) {
-            System.out.println("ID = " + id.get(i)+1);
+            System.out.println("ID = " + id.get(i));
             System.out.println("Nama Lengkap = " + nameLengkap.get(i));
              System.out.println("Nama depan = "+firstName.get(i));
             System.out.println("Nama Akhir = " + lastName.get(i));
