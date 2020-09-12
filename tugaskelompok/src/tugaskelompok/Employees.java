@@ -1,46 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tugaskelompok;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author NAME
- */
 public class Employees {
 
     static Scanner in = new Scanner(System.in);
     static ArrayList<String> id = new ArrayList<>();
-    static ArrayList<String> firstName = new ArrayList<String>();
+    static ArrayList<String> firstName = new ArrayList<>();
     static ArrayList<String> lastName = new ArrayList<>();
     static ArrayList<String> usernameArr = new ArrayList<>();
-    static ArrayList<String> passwordArr = new ArrayList<String>();
+    static ArrayList<String> passwordArr = new ArrayList<>();
 
-    public static String tambahemployee() {
-        System.out.println("Pilihan(1-3) : 1");
+    public static void tambahemployee() {
         int a = id.size();
         int idbaru = 1 + a++;
         String addZero = String.format("%05d", idbaru);
         id.add(addZero);
         System.out.print("Nama Lengkap    : ");
         String namaAsli = in.nextLine();
-        //            firsr name 
+        // first name 
         String seprator = " ";
         int sepPos = namaAsli.lastIndexOf(seprator);
         String namaDepan = namaAsli.substring(0, sepPos);
         firstName.add(namaDepan);
-        //   menambahkan nama belakang 
+        //menambahkan nama belakang 
         String namaAkhir = namaAsli.substring(namaAsli.lastIndexOf(' '));
         lastName.add(namaAkhir);
-        //   String  namaLengkap = in.nextLine();             
+        //String  namaLengkap = in.nextLine();             
         System.out.print("Password        : ");
         String pas = in.nextLine();
-        //   mendapat hashe password;
+        //mendapat hashe password;
         String passHashe = pas;
         String getSalt = BCrypt.gensalt();
         String hashePass = BCrypt.hashpw(pas, getSalt);
@@ -53,9 +43,6 @@ public class Employees {
         //menghilangkan space
         userFix = userFix.replaceAll("\\s", "");
         usernameArr.add(userFix);
-        System.out.println("=====================");
-        System.out.println("");
-        return "";
     }
 
     public static void lihatemployee() {
