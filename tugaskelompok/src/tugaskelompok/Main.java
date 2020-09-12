@@ -6,6 +6,9 @@
 package tugaskelompok;
 
 import java.util.Scanner;
+import static tugaskelompok.Employees.tambahemployee;
+
+
 
 /**
  *
@@ -17,7 +20,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Employees employees = new Employees();
         Scanner scan = new Scanner(System.in);
+       
         int inputPilihan;
         boolean pilihan = true;
 
@@ -32,34 +37,26 @@ public class Main {
 
             switch (inputPilihan) {
                 case 1:
-                    System.out.println("========================================"); 
-                    System.out.println("Pilihan(1-3) : 1");
-                    System.out.print("Nama Lengkap    : ");
-                    String namaLengkap = scan.next();
-                    // nama belakang
                     
-                    System.out.print("Password        :");
-                    String password = scan.next();
-                    
-                    System.out.println("========================================");
-                    System.out.println("");
+                    tambahemployee();
+                  
                     break;
                 case 2:
-                    System.out.println("========================================");
+                     System.out.println("=====================");
                     System.out.println("Pilihan(1-3) : 2");
                     System.out.println("Id Karyawan     : ");
                     System.out.println("Nama Depan      : ");
-                    System.out.println("Nama Belakang   : ");
+                    System.out.println("Nama Belakang   : "+employees.namaBelakang);
                     System.out.println("Username        : ");
-                    System.out.println("========================================");
+                   System.out.println("=====================");
                     System.out.println("");
                     break;
                 case 3:
-                    System.out.println("========================================");
+                   System.out.println("=====================");
                     System.out.println("Pilihan(1-3) : 3");
                     System.out.println("Username    : ");
                     System.out.println("Password    : ");
-                    System.out.println("========================================");
+                  System.out.println("=====================");
                     System.out.println("");
                     break;
                 default:
@@ -67,5 +64,8 @@ public class Main {
             }
         }
     }
+   
+
+
 
 }

@@ -5,6 +5,10 @@
  */
 package tugaskelompok;
 
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author NAME
@@ -12,10 +16,61 @@ package tugaskelompok;
 public class Employees {
     int idEmployee;
     String namaDepan,namaBelakang,username,password;
-    public static String addEmploye(){
+   
+     public static String tambahemployee(){
+          Scanner in = new Scanner(System.in);
+           ArrayList<Integer> id = new ArrayList<Integer>();
+              ArrayList<String> nameLengkap = new ArrayList<String>();
+              ArrayList<String> lastName = new ArrayList<String>();
+              ArrayList<String> username = new ArrayList<String>();
+              ArrayList<String> password = new ArrayList<String>();
+          
+       System.out.println("=====================");
+      
+                    System.out.println("Pilihan(1-3) : 1");
+                    int a=0;
+                    a++;
+                    id.add(a);
+                    System.out.print("Nama Lengkap    : ");
+                    String namaAsli = in.nextLine();
+                    nameLengkap.add(namaAsli);
+                    //menambahkan nama belakang 
+                    String namaAkhir = namaAsli.substring(namaAsli.lastIndexOf(' '));
+                    lastName.add(namaAkhir);
+                    //   String  namaLengkap = in.nextLine();             
+                    System.out.print("Password        : ");
+                    String pas = in.nextLine();  
+                    //   mendapat hashe password;
+                    String passHashe = pas;
+                    String getSalt = BCrypt.gensalt();
+                    String hashePass = BCrypt.hashpw(pas, getSalt);
+                    password.add(hashePass);  
+                    //username
+                    String user = namaAkhir.substring(0, 3);
+                     String[] values = namaAsli.split(" ",2);
+                      String f = values[0];
+                      String userFix = f+user;
+                      //menghilangkan space
+                      userFix = userFix.replaceAll("\\s", "");
+                      username.add(userFix);
+                    
+            
+           for (int i = 0; i < a; i++) {
+             System.out.println("ID = "+id.get(i));
+             System.out.println("Nama Lengkap = "+nameLengkap.get(i));
+             System.out.println("Nama Akhir = "+lastName.get(i));
+               System.out.println("Username = "+ username.get(i));
+             
+             System.out.println("Password : "+password.get(i));
+             
+         }
+        
+                     System.out.println("=====================");
+                    System.out.println("");
+    return "";}
+     
+     //public static showEmployee(ArrayList<>)
     
-        return"";
-    }
     public int getIdEmployee() {
         return idEmployee;
     }
