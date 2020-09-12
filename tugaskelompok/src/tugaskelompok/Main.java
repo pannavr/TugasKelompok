@@ -6,6 +6,7 @@
 package tugaskelompok;
 
 import java.util.Scanner;
+import static tugaskelompok.Employees.showEmployee;
 import static tugaskelompok.Employees.tambahemployee;
 
 
@@ -42,14 +43,7 @@ public class Main {
                   
                     break;
                 case 2:
-                     System.out.println("=====================");
-                    System.out.println("Pilihan(1-3) : 2");
-                    System.out.println("Id Karyawan     : ");
-                    System.out.println("Nama Depan      : ");
-                    System.out.println("Nama Belakang   : "+employees.namaBelakang);
-                    System.out.println("Username        : ");
-                   System.out.println("=====================");
-                    System.out.println("");
+                showEmployee();
                     break;
                 case 3:
                    System.out.println("=====================");

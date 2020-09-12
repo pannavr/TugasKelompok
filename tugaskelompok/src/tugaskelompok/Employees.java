@@ -15,22 +15,23 @@ import java.util.Scanner;
  */
 public class Employees {
     int idEmployee;
-    String namaDepan,namaBelakang,username,password;
+    String namaDepan,namaBelakang;
+       static   ArrayList<Integer> id = new ArrayList<Integer>();
+         static     ArrayList<String> nameLengkap = new ArrayList<String>();
+          static    ArrayList<String> lastName = new ArrayList<String>();
+          static    ArrayList<String> username = new ArrayList<String>();
+           static   ArrayList<String> password = new ArrayList<String>();
    
      public static String tambahemployee(){
           Scanner in = new Scanner(System.in);
-           ArrayList<Integer> id = new ArrayList<Integer>();
-              ArrayList<String> nameLengkap = new ArrayList<String>();
-              ArrayList<String> lastName = new ArrayList<String>();
-              ArrayList<String> username = new ArrayList<String>();
-              ArrayList<String> password = new ArrayList<String>();
+       
           
        System.out.println("=====================");
       
                     System.out.println("Pilihan(1-3) : 1");
                     int a=0;
-                    a++;
-                    id.add(a);
+               
+                    id.add(a++);
                     System.out.print("Nama Lengkap    : ");
                     String namaAsli = in.nextLine();
                     nameLengkap.add(namaAsli);
@@ -55,22 +56,35 @@ public class Employees {
                       username.add(userFix);
                     
             
-           for (int i = 0; i < a; i++) {
+//           for (int i = 0; i <a; i++) {
+//             System.out.println("ID = "+id.get(i));
+//             System.out.println("Nama Lengkap = "+nameLengkap.get(i));
+//             System.out.println("Nama Akhir = "+lastName.get(i));
+//               System.out.println("Username = "+ username.get(i));
+//             
+//             System.out.println("Password : "+password.get(i));
+//  
+//         }
+        
+                     System.out.println("=====================");
+                    System.out.println("");
+    return "";}
+     
+     public static String showEmployee(){
+         int a = 0;
+        a++;
+       for (int i = 0; i <=a; i++) {
              System.out.println("ID = "+id.get(i));
              System.out.println("Nama Lengkap = "+nameLengkap.get(i));
              System.out.println("Nama Akhir = "+lastName.get(i));
                System.out.println("Username = "+ username.get(i));
              
              System.out.println("Password : "+password.get(i));
-             
+  
          }
-        
-                     System.out.println("=====================");
-                    System.out.println("");
-    return "";}
-     
-     //public static showEmployee(ArrayList<>)
+     return"";}
     
+     
     public int getIdEmployee() {
         return idEmployee;
     }
@@ -95,19 +109,5 @@ public class Employees {
         this.namaBelakang = namaBelakang;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+   
 }
