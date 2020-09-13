@@ -1,14 +1,17 @@
 package tugaskelompok;
 
+import java.io.IOException;
 import java.util.Scanner;
 
-
+/**
+ *
+ * @author panna & yogi
+ */
 public class Main {
 
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in);
+        String namaAsli, pas;
         int inputPilihan;
         boolean pilihan = true;
         boolean done = false;
@@ -22,12 +25,19 @@ public class Main {
                     System.out.println("4. Exit");
                     System.out.println("=====================");
                     System.out.print("Pilihan(1-4) : ");
-                    inputPilihan = scan.nextInt();
+                    inputPilihan = in.nextInt();
                     switch (inputPilihan) {
                         case 1:
                             System.out.println("=====================");
                             System.out.println("Pilihan(1-4) : 1");
-                            Employees.tambahemployee();
+                            in.nextLine();
+                            //input nama lengkap
+                            System.out.print("Nama Lengkap    : ");
+                            namaAsli = in.nextLine();
+                            //input password
+                            System.out.print("Password        : ");
+                            pas = in.nextLine();
+                            Employees.tambahemployee(namaAsli, pas);
                             System.out.println("=====================");
                             System.out.println("");
                             break;
@@ -40,7 +50,12 @@ public class Main {
                         case 3:
                             System.out.println("=====================");
                             System.out.println("Pilihan(1-4) : 3");
-                            Employees.login();
+                            in.nextLine();
+                            System.out.print("Username    : ");
+                            String username = in.nextLine();
+                            System.out.print("Password    : ");
+                            String password = in.nextLine();
+                            Employees.login(username, password);
                             System.out.println("=====================");
                             System.out.println("");
                             break;
@@ -54,7 +69,7 @@ public class Main {
                 done = true;
             } catch (Exception e) {
                 System.out.println("Tolong input angka!!");
-                scan.next();
+                in.next();
             }
         }
     }
