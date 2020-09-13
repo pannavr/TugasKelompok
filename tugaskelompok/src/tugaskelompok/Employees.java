@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * @author panna & yogi
+ * @author panna
+ * @author yogi
  *
- * Employees mengelola data employee
+ * Employees berisi fungsi yang akan di jalankan berdasarkan menu di pilih pada Main
  */
 public class Employees {
 
@@ -46,7 +47,7 @@ public class Employees {
             lastName.add(namaAkhir);
             //username input username
             String user = namaAkhir.substring(0, 3);
-            String[] values = namaAsli.split(" ", 2);
+            String[] values = namaAsli.split(" ");
             String satu = values[0];
             String dua = values[1];
             String userFix = satu + user;

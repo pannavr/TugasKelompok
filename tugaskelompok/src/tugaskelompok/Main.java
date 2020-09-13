@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 /**
  *
- * @author panna & yogi
+ * @author panna 
+ * @author yogi
+ * Main berisi tampilan menu utama saat program ini di jalankan.
  */
 public class Main {
 
