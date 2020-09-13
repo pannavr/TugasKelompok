@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  * @author panna & yogi
- * 
+ *
  * Employees mengelola data employee
  */
 public class Employees {
@@ -21,11 +21,11 @@ public class Employees {
      * menambahkan data employee dan generate id employee,<br />
      * nama depan,nama belakang, username dan hashed password.<br />
      * yang kemudian disimpan kedalam ArrayList;
-     * 
+     *
      * @param namaAsli	nama lengkap employee <br />
-     * (ex : Naufal Aji Widodo) 
+     * (ex : Naufal Aji Widodo)
      * @param pas	password yang akan digunakan untuk login
-     * 
+     *
      */
     public static void tambahemployee(String namaAsli, String pas) {
         //manipulasi string idemployee
@@ -84,12 +84,12 @@ public class Employees {
      * menampilkan generate data employee yang telah di input<br />
      * pada Employees.tambahemployee secara berurutan sesuai <br />
      * dengan Id Employee.<br />
-     * 
-     * @serialData  Id Employee<br />
-     * @serialData  Nama Depan<br />
-     * @serialData  Nama Belakang<br />
-     * @serialData  Username<br />
-     * @serialData  Hashed Password<br />
+     *
+     * @serialData Id Employee<br />
+     * @serialData Nama Depan<br />
+     * @serialData Nama Belakang<br />
+     * @serialData Username<br />
+     * @serialData Hashed Password<br />
      */
     public static void lihatemployee() {
         for (int i = 0; i < id.size(); i++) {
@@ -108,10 +108,10 @@ public class Employees {
      * menggunakan BCrypt.checkpw.<br />
      * jika login berhasil print Login Berhasil!!<br />
      * jika login gagal print Login Gagal!!<br />
-     * 
-     * @param username  bisa dilihat di Employees.lihatemployee<br />
-     * @param password  diinput pada Employees.tambahemployee<br />
-     * 
+     *
+     * @param username bisa dilihat di Employees.lihatemployee<br />
+     * @param password diinput pada Employees.tambahemployee<br />
+     *
      * @exception Username tidak ada
      */
     public static void login(String username, String password) {
